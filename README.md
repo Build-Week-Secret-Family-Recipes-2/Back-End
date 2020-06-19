@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Back-End
 
 ## Schema
@@ -48,5 +47,3 @@ test account:
 | POST   | `/api/auth/register` | register a new user user | [link](#post-apiauthregister) |
 | POST   | `/api/auth/login`    | login an user            | [link](#post-apiauthlogin)    |
 | &nbsp; |                      |                          |                               |
-=======
->>>>>>> 0f035c6f41f675716c480fbe4d7f64dea45c3bff
