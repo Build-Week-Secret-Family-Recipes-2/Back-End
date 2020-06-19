@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Back-End
 
 ## Schema
@@ -43,10 +42,9 @@ test account:
 
 #### Table of Contents
 
-| Type   | Path                 | Notes                    | Example                       |
-| ------ | -------------------- | ------------------------ | ----------------------------- |
-| POST   | `/api/auth/register` | register a new user user | [link](#post-apiauthregister) |
-| POST   | `/api/auth/login`    | login an user            | [link](#post-apiauthlogin)    |
-| &nbsp; |                      |                          |                               |
-=======
->>>>>>> 0f035c6f41f675716c480fbe4d7f64dea45c3bff
+| Type   | Path                 | Notes                                                  | Example                       |
+| ------ | -------------------- | ------------------------------------------------------ | ----------------------------- |
+| POST   | `/api/auth/register` | register a new user user                               | [link](#post-apiauthregister) |
+| POST   | `/api/auth/login`    | login an user                                          | [link](#post-apiauthlogin)    |
+| &nbsp; |                      |                                                        |                               |
+| POST   | `/api/recipes`       | create a new recipe; requires `title` and`ingredients` | [link](#post-apirecipes)      |
