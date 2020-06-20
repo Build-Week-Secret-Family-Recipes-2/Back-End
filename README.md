@@ -48,3 +48,5 @@ test account:
 | POST   | `/api/auth/login`    | login an user                                          | [link](#post-apiauthlogin)    |
 | &nbsp; |                      |                                                        |                               |
 | POST   | `/api/recipes`       | create a new recipe; requires `title` and`ingredients` | [link](#post-apirecipes)      |
+| PUT    | `/api/recipes/:id`   | updates a recipe given an `id` value; requires a value | [link](#put-apirecipe)		 |
+| DELETE | `api/recipes/:id`    | deletes a recipe given an `id` value; required         | [link](#delete-apirecipe)     |
