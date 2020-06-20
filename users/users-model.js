@@ -1,4 +1,4 @@
-const db = require('../database/dbConfig');
+const db = require('../data/dbConfig.js');
 
 module.exports = {
 	find,
@@ -12,13 +12,13 @@ function find() {
 }
 
 function findById(id) {
-	return db('admins').where({ id }).first();
+	return db('users').where({ id }).first();
 }
 
 async function update(changes, id) {
-	return db('admins').where({ id }).update(changes, '*');
+	return db('users').where({ id }).update(changes, '*');
 }
 
 function remove(id) {
-	return db('admins').where({ id }).del();
+	return db('users').where({ id }).del();
 }
