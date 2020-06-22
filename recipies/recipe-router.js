@@ -6,7 +6,7 @@ const router = server.Router();
 
 router.get('/',(req, res)=> {
    
-   Recipes.find()
+   Recipes.findAllRecipes()
    .then(recipe => {
        res.json(recipe);
    })
@@ -18,7 +18,7 @@ router.get('/',(req, res)=> {
 router.get('/:id',(req, res)=>{
 
     const {id} =  req.params;
-    Recipes.findById(id)
+    Recipes.findRecipeById(id)
         .then(recipe => {
             res.json(recipe);
         })
@@ -35,7 +35,7 @@ router.put('/:id', (req, res) => {
 
     if(changes){
 
-        Recipes.update(changes, id)
+        Recipes.updateRecipe(changes, id)
         .then(update => {
             res.json({updated: update, id: id});
         })
@@ -56,7 +56,7 @@ router.delete('/:id', (req, res) => {
 
     const {id} = req.params;
 
-    Recipes.erase(id)
+    Recipes.eraseRecipe(id)
         .then(count => {
             if(count){
                 res.json({deleted:count, id:id});
