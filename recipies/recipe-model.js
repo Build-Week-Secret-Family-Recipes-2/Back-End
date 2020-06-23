@@ -1,42 +1,37 @@
-const db = require('../database/dbConfig.js');
-
+const db = require('../database/dbConfig');
 
 module.exports = {
-    findAllRecipes,
-    findRecipeById,
-    addRecipe,
-    findRecipeBy,
-    updateRecipe,
-    eraseRecipe
-}
+	findAllRecipes,
+	findRecipeById,
+	addRecipe,
+	findRecipeBy,
+	updateRecipe,
+	eraseRecipe,
+};
 
 //resolves to an array of users
-function findAllRecipes(){
-    return db('recipes');
-
+function findAllRecipes() {
+	return db('recipes');
 }
 
-function findRecipeBy(filter){
-    return db('recipes').where(filter);
+function findRecipeBy(filter) {
+	return db('recipes').where(filter);
 }
 
 //resolves to  a single user or null
-function findRecipeById(id){
-    return db('recipes').where({id}).first()
-
+function findRecipeById(id) {
+	return db('recipes').where({ id }).first();
 }
 
-async function addRecipe(recipe){
-    const [id] = await db('recipes').insert(recipe);
-    return findById(id);
-
+async function addRecipe(recipe) {
+	const [id] = await db('recipes').insert(recipe);
+	return findById(id);
 }
 
-function updateRecipe(data, id){
-   return db('recipes').where({id}).update(data);
+function updateRecipe(data, id) {
+	return db('recipes').where({ id }).update(data);
 }
 
 function eraseRecipe(id) {
-    return db('recipes').where({id}).del();
-
+	return db('recipes').where({ id }).del();
 }
