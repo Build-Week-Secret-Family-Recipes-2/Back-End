@@ -12,7 +12,6 @@
 | username  | string  | _required_              |
 | firstname | string  | _required_ and _unique_ |
 | lastname  | string  | _required_ and _unique_ |
-| username  | string  | _required_              |
 
 #### Recipes
 
@@ -36,7 +35,9 @@ test account:
 {
 	"email": "tester@email.com",
 	"username": "test123",
-	"password": "test"
+	"password": "test",
+	"firstname": "johnny",
+	"lastname": "test"
 }
 ```
 
@@ -48,5 +49,5 @@ test account:
 | POST   | `/api/auth/login`    | login an user                                          | [link](#post-apiauthlogin)    |
 | &nbsp; |                      |                                                        |                               |
 | POST   | `/api/recipes`       | create a new recipe; requires `title` and`ingredients` | [link](#post-apirecipes)      |
-| PUT    | `/api/recipes/:id`   | updates a recipe given an `id` value; requires a value | [link](#put-apirecipe)		 |
+| PUT    | `/api/recipes/:id`   | updates a recipe given an `id` value; requires a value | [link](#put-apirecipe)        |
 | DELETE | `api/recipes/:id`    | deletes a recipe given an `id` value; required         | [link](#delete-apirecipe)     |
