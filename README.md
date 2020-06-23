@@ -50,4 +50,9 @@ test account:
 | &nbsp; |                      |                                                        |                               |
 | POST   | `/api/recipes`       | create a new recipe; requires `title` and`ingredients` | [link](#post-apirecipes)      |
 | PUT    | `/api/recipes/:id`   | updates a recipe given an `id` value; requires a value | [link](#put-apirecipe)        |
-| DELETE | `api/recipes/:id`    | deletes a recipe given an `id` value; required         | [link](#delete-apirecipe)     |
+| DELETE | `/api/recipes/:id`    | deletes a recipe given an `id` value; required         | [link](#delete-apirecipe)     |
+|
+| GET    | `/api/users` |       | gets all users from database                            |
+| GET    | `/api/users/:id`|    | gets back a specific user with given id                 |
+| POST   | `/api/users/`   |    | creates a new user 									  |
+| PUT    | `api/users/:id` |	| updates a user record 								  |
