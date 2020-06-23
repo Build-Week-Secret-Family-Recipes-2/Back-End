@@ -15,6 +15,20 @@ router.get('/',(req, res)=> {
    });
 });
 
+router.get('/from/:id',(req, res)=>{
+
+    const {id} =  req.params;
+    Recipes.findRecipeByUserId(id)
+        .then(recipe => {
+            res.json(recipe);
+        })
+        .catch(error => {
+            res.status(500).json({err: 'failed to get recipe with given  user id'})
+        })
+
+});
+
+
 router.get('/:id',(req, res)=>{
 
     const {id} =  req.params;
@@ -27,6 +41,8 @@ router.get('/:id',(req, res)=>{
         })
 
 });
+
+
 
 router.put('/:id', (req, res) => {
 

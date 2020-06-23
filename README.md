@@ -43,11 +43,32 @@ test account:
 
 #### Table of Contents
 
-| Type   | Path                 | Notes                                                  | Example                       |
-| ------ | -------------------- | ------------------------------------------------------ | ----------------------------- |
-| POST   | `/api/auth/register` | register a new user user                               | [link](#post-apiauthregister) |
-| POST   | `/api/auth/login`    | login an user                                          | [link](#post-apiauthlogin)    |
-| &nbsp; |                      |                                                        |                               |
-| POST   | `/api/recipes`       | create a new recipe; requires `title` and`ingredients` | [link](#post-apirecipes)      |
-| PUT    | `/api/recipes/:id`   | updates a recipe given an `id` value; requires a value | [link](#put-apirecipe)        |
-| DELETE | `api/recipes/:id`    | deletes a recipe given an `id` value; required         | [link](#delete-apirecipe)     |
+
+## users
+
+| REQUEST    | URL                 | Notes                                    |
+| --------- | ---------------------| ---------------------------------------- |
+| GET       | `/api/users`         | gets all users from database             |
+| GET       | `/api/users/:id`     | gets back a specific user with given id  |
+| POST      | `/api/users/`        | creates a new user                       |
+| PUT       | `api/users/:id`      | updates a user record                    |
+								  
+
+## recipes
+
+| REQUEST    | URL                 | Notes                                              |
+| --------- | ---------------------| ---------------------------------------------------|
+| POST       | `/api/recipes`       | create a new recipe;`title`&`ingredients` a must  |           
+| PUT        | `/api/recipes/:id`   | updates a recipe given an `id` value; required    |
+| DELETE     | `/api/recipes/:id`   | deletes a recipe given an `id` value; required    | 
+| GET        | `/from/:id'`       	| gets all recipes from a user given the `id`		|
+| GET        | `/api/recipes/`      | gets all recipes                                  |
+
+
+
+## Auth
+
+| REQUEST    | URL                 | Notes                                    |
+| --------- | ---------------------| ---------------------------------------- |
+| POST      | `/api/auth/register`| registers a new user                      |
+| POST      | `/api/auth/login`   | users logs in                             |
