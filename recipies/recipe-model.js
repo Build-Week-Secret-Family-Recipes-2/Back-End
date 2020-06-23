@@ -7,7 +7,8 @@ module.exports = {
     addRecipe,
     findRecipeBy,
     updateRecipe,
-    eraseRecipe
+    eraseRecipe,
+    findRecipeByUserId
 }
 
 //resolves to an array of users
@@ -22,9 +23,16 @@ function findRecipeBy(filter){
 
 //resolves to  a single user or null
 function findRecipeById(id){
-    return db('recipes').where({id}).first()
+    return db('recipes').where({id});
 
 }
+
+//resolves to  a single user or null
+function findRecipeByUserId(userId){
+    return db('recipes').where({userId}).first()
+
+}
+
 
 async function addRecipe(recipe){
     const [id] = await db('recipes').insert(recipe);
