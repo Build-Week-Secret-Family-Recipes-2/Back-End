@@ -18,7 +18,7 @@ router.get('/:id', (req, res) => {
 	Users.findById(id)
 		.then((users) => {
 			if (users) {
-				res.json(user);
+				res.json(users);
 			} else {
 				res.status(404).json({ message: 'Could not find user with given id.' });
 			}
@@ -27,6 +27,24 @@ router.get('/:id', (req, res) => {
 			res.status(500).json({ message: 'Failed to get users' });
 		});
 });
+
+router.post('/', (req, res) => {
+
+	const newUser = req.body;
+
+	Users.insert(newUser)
+	.then((user) => {
+		if(user){
+			res.json(user);
+		} else {
+			res.status(404).json({message: "Could not create the user"})
+		}
+	})
+	.catch((err) => {
+		res.status(500).json({message: "failed to create user"});
+	});
+});
+
 router.put('/:id', (req, res) => {
 	const { id } = req.params;
 	const changes = req.body;
