@@ -61,7 +61,7 @@ test account:
 | POST       | `/api/recipes`       | create a new recipe;`title`&`ingredients` a must  |           
 | PUT        | `/api/recipes/:id`   | updates a recipe given an `id` value; required    |
 | DELETE     | `/api/recipes/:id`   | deletes a recipe given an `id` value; required    | 
-| GET        | `/from/:id'`       	| gets all recipes from a user given the `id`		|
+| GET        | `/from/:id`       	| gets all recipes from a user given the `id`		|
 | GET        | `/api/recipes/`      | gets all recipes                                  |
 
 
