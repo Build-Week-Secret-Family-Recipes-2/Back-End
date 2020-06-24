@@ -119,4 +119,4 @@ dist
 **/node_modules
 
 #VS code config files
-**/vscode
+**/.vscode
