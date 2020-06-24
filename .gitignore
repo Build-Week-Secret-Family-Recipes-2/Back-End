@@ -114,3 +114,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+#npm module folders
+**/node_modules
+
+#VS code config files
+**/.vscode
