@@ -1,16 +1,16 @@
 const jwt = require('jsonwebtoken');
 
 module.exports = (req, res, next) => {
-	const { authorization } = req.headers;
+	var token = req.headers['access-token'];
 
-	if (authorization) {
+	if(token) {
 		const secret = process.env.JWT_SECRET || 'it is a secret, is it safe?';
 
-		jwt.verify(authorization, secret, function (err, decodedToken) {
+		jwt.verify(token, secret, (err, decodedToken) => {
 			if (err) {
 				res.status(401).json({ message: 'Invalid Token' });
 			} else {
-				req.token = decodedToken;
+				req.decodedToken = decodedToken;
 				next();
 			}
 		});
