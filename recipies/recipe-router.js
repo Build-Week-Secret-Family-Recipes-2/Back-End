@@ -4,7 +4,7 @@ const Recipes = require('./recipe-model.js');
 
 const router = server.Router();
 
-router.get('/',(req, res)=> {
+router.get('/',(req, res) => {
    
    Recipes.findAllRecipes()
    .then(recipe => {
