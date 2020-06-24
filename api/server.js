@@ -21,6 +21,7 @@ const authRouter = require('../auth/auth-router.js');
 server.get('/', (req, res) => {
 	res.send('Server Running');
 });
+
 server.use('/api/auth', authRouter);
 server.use('/api/users', authMiddleware, usersRouter);
 server.use('/api/recipes', authMiddleware, recipesRouter);
