@@ -23,7 +23,7 @@ server.get('/', (req, res) => {
 });
 
 server.use('/api/auth', authRouter);
-server.use('/api/users',  usersRouter);
-server.use('/api/recipes',  recipesRouter);
+server.use('/api/users', authMiddleware,  usersRouter);
+server.use('/api/recipes', authMiddleware,  recipesRouter);
 
 module.exports = server;
