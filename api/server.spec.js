@@ -3,8 +3,6 @@ const request = require('supertest');
 const db = require('../database/dbConfig');
 
 
-
-
 describe('GET', () => {
 
     beforeAll( async () => {
