@@ -15,6 +15,19 @@ router.get('/',(req, res) => {
    });
 });
 
+router.post('/', (req, res) => {
+
+    const newRecipe = req.body;
+   
+    Recipes.addRecipe(newRecipe)
+    .then(recipe => {
+        res.json(recipe);
+    })
+    .catch(err => {
+         res.status(500).json({err: 'failed to post recipes'})
+    });
+ });
+
 router.get('/from/:id',(req, res)=>{
 
     const {id} =  req.params;

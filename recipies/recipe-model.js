@@ -31,7 +31,7 @@ function findRecipeByUserId(userId) {
 
 async function addRecipe(recipe) {
 	const [id] = await db('recipes').insert(recipe);
-	return findById(id);
+	return findRecipeById(id);
 }
 
 function updateRecipe(data, id) {
