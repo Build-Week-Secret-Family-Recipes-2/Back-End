@@ -3,6 +3,7 @@ const Recipes = require('./recipe-model.js');
 
 const router = server.Router();
 
+<<<<<<< HEAD
 router.get('/', (req, res) => {
 	Recipes.findAllRecipes()
 		.then((recipe) => {
@@ -22,6 +23,43 @@ router.get('/from/:id', (req, res) => {
 		.catch((error) => {
 			res.status(500).json({ err: 'failed to get recipe with given  user id' });
 		});
+=======
+router.get('/',(req, res) => {
+   
+   Recipes.findAllRecipes()
+   .then(recipe => {
+       res.json(recipe);
+   })
+   .catch(err => {
+        res.status(500).json({err: 'failed to get recipes'})
+   });
+});
+
+router.post('/', (req, res) => {
+
+    const newRecipe = req.body;
+   
+    Recipes.addRecipe(newRecipe)
+    .then(recipe => {
+        res.json(recipe);
+    })
+    .catch(err => {
+         res.status(500).json({err: 'failed to post recipes'})
+    });
+ });
+
+router.get('/from/:id',(req, res)=>{
+
+    const {id} =  req.params;
+    Recipes.findRecipeByUserId(id)
+        .then(recipe => {
+            res.json(recipe);
+        })
+        .catch(error => {
+            res.status(500).json({err: 'failed to get recipe with given  user id'})
+        })
+
+>>>>>>> cf758eb2e7aabb384b7894f04ec3e32c58d472ea
 });
 
 router.get('/:id', (req, res) => {
