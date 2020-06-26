@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 module.exports = (req, res, next) => {
 	var token = req.headers['access-token'];
 
-	if(token) {
+	if (token) {
 		const secret = process.env.JWT_SECRET || 'it is a secret, is it safe?';
 
 		jwt.verify(token, secret, (err, decodedToken) => {
