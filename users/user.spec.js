@@ -1,3 +1,4 @@
+const server = require('../api/server');
 const request = require('supertest');
 const usersRouter = require('./users-router');
 const db = require('../database/dbConfig');
@@ -11,8 +12,7 @@ describe('usersRouter', function () {
 
 	describe('GET /', function () {
 		const username = 'test123';
-		const password =
-			'$2a$10$gj3grxdnu7CDtNyY69MtVe5xcv.4xK0NlC.6beVPmu1dioSKIE84y';
+		const password = 'test';
 
 		it('should get users', function () {
 			request(usersRouter)
@@ -35,8 +35,7 @@ describe('usersRouter', function () {
 
 describe('PUT /:id', function () {
 	const username = 'test123';
-	const password =
-		'$2a$10$gj3grxdnu7CDtNyY69MtVe5xcv.4xK0NlC.6beVPmu1dioSKIE84y';
+	const password = 'test';
 
 	it('should edit a user', function () {
 		request(usersRouter)
@@ -57,8 +56,7 @@ describe('PUT /:id', function () {
 
 describe('DELETE /:id', function () {
 	const username = 'test123';
-	const password =
-		'$2a$10$gj3grxdnu7CDtNyY69MtVe5xcv.4xK0NlC.6beVPmu1dioSKIE84y';
+	const password = 'test';
 
 	it('should delete a user', function () {
 		request(usersRouter)
