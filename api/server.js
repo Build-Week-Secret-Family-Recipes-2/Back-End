@@ -3,15 +3,12 @@ const cors = require('cors');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 
-// const usersRouter = require('../users/users-router');
-// const recipesRouter = require('../recipies/recipe-router');
-
 const server = express();
 
 server.use(helmet());
 server.use(cors());
 server.use(express.json());
-server.use(bodyParser.urlencoded({extended: true}));
+server.use(bodyParser.urlencoded({ extended: true }));
 
 const authMiddleware = require('../auth/auth-middleware.js');
 const recipesRouter = require('../recipies/recipe-router.js');
